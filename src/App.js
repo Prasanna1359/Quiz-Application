@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+import Layout from "./QuizTask/Layout";
+import Register from "./QuizTask/Register";
+import Login from "./QuizTask/Login";
+import AdminDashboard from "./QuizTask/AdminDashboard";
+import UserDashboard from "./QuizTask/UserDashboard";
+import NoPage from "./QuizTask/NoPage";
+import Reslts from "./QuizTask/Reslts";
+import ResultTable from "./QuizTask/ResultTable";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+
+        {/* ONLY this page has Layout */}
+        <Route path="/" element={<Layout />} />
+
+        {/* Pages WITHOUT Layout */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/UserDashboard" element={<UserDashboard />} />
+        <Route path="/Results" element={<Reslts />} />
+        <Route path="/ResultTable" element={<ResultTable />} />
+
+        {/* 404 */}
+        <Route path="*" element={<NoPage />} />
+
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

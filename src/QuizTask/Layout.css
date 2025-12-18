@@ -1,0 +1,53 @@
+
+/* Container for buttons */
+
+.nav-buttons {
+ 
+  justify-content: center;
+  
+  padding: 30px;
+   display: flex;
+  gap: 35px;
+}
+
+/* Button styling */
+.nav-buttons button {
+  background-color: #f9f6fb;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  
+}
+
+/* Remove link default styles */
+.nav-buttons a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Hover effects */
+.nav-buttons button:hover {
+    color: #fff;
+  background-color: #983ef2;
+  transform: translateY(-2px);
+  
+}
+
+/* Active link (optional) */
+.nav-buttons a.active {
+  color: #667eea;
+} 
+
+/* Full blank page background */
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
